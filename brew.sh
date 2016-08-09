@@ -104,3 +104,7 @@ brew install zopfli
 
 # Remove outdated versions from the cellar.
 brew cleanup
+
+
+# Install some standard devtools
+brew install node
