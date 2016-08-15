@@ -256,6 +256,6 @@ function tre() {
 # Deploy web to both DEV and UAT servers.
 function deploy_web {
 	cd ~/Code/config/ansible &&
-		ansible-playbook -i hosts/dev deploy_web.yml --tags=deploy --extra-vars="artifact_name=web_2.0.0-alpha_$1"
+		ansible-playbook -i hosts/dev deploy_web.yml --tags=deploy --extra-vars="artifact_name=web_2.0.0-alpha_$1" &&
 		ansible-playbook -i hosts/uat deploy_web.yml --tags=deploy --extra-vars="artifact_name=web_2.0.0-alpha_$1"
 }
