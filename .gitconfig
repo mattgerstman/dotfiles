@@ -60,6 +60,9 @@
 	# a.k.a. ‘delete merged’
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
+	# Fancy log that shows merges
+	lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
 
@@ -78,6 +81,28 @@
 			git commit --amend -m \"$(git log -1 --pretty=%B)\n\nCloses #$1.\"; \
 		fi \
 	}; f"
+
+	# Get the current branch name (not so useful in itself, but used in
+	# other aliases)
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	# Push the current branch to the remote "origin", and set it to track
+	# the upstream branch
+	publish = "!git push -u origin $(git branch-name)"
+
+	# Delete the remote version of the current branch
+	unpublish = "!git push origin :$(git branch-name)"
+
+	# Delete a branch and recreate it from master — useful if you have, say,
+	# a development branch and a master branch and they could conceivably go
+	# out of sync
+	recreate = "!f() { [[ -n $@ ]] && git checkout \"$@\" && git unpublish && git checkout master && git branch -D \"$@\" && git checkout -b \"$@\" && git publish; }; f"
+
+	# Delete any branches that have been merged into master
+	# See also: https://gist.github.com/robmiller/5133264
+	delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+	# Push a branch to the server and create it if necessary
+	pu = "!f() { git push 2> /dev/null || git publish; }; f"
 
 [apply]
 
