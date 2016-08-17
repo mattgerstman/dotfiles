@@ -104,6 +104,12 @@
 	# Push a branch to the server and create it if necessary
 	pu = "!f() { git push 2> /dev/null || git publish; }; f"
 
+	# Force push
+	puf = push --force
+	# For funzies
+	puff = "!git puf"
+	puffs = "!git puf"
+
 [apply]
 
 	# Detect whitespace errors when applying a patch
