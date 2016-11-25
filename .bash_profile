@@ -67,3 +67,6 @@ git config --global push.default simple
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/Matthew/.sdkman"
 [[ -s "/Users/Matthew/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/Matthew/.sdkman/bin/sdkman-init.sh"
+
+# Fix private key forwarding for git.
+ssh-add ~/.ssh/id_rsa > /dev/null 2>&1
