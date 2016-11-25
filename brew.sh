@@ -107,4 +107,5 @@ brew cleanup
 
 
 # Install some standard devtools
-brew install node
+brew install redis
+brew install mongodb
