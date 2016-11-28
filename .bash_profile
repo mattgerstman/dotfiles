@@ -6,7 +6,7 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home
 export set MYSQL_HOME=/Applications/mampstack-5.4.41-0/mysql
 export PATH=$PATH:/opt/local/bin
 export set PATH=$PATH:$MYSQL_HOME/bin
-
+export GOPATH=~/Dropbox/Go
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
