@@ -7,6 +7,7 @@ export set MYSQL_HOME=/Applications/mampstack-5.4.41-0/mysql
 export PATH=$PATH:/opt/local/bin
 export set PATH=$PATH:$MYSQL_HOME/bin
 
+export GOPATH=~/Code/Go
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
