@@ -8,6 +8,7 @@ export PATH=$PATH:/opt/local/bin
 export set PATH=$PATH:$MYSQL_HOME/bin
 
 export GOPATH=~/Code/Go
+export PATH="$PATH:$GOPATH/bin"
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
