@@ -256,25 +256,25 @@ function tre() {
 # Deploy web to both DEV and UAT servers.
 function deploy_web {
 	cd ~/Code/config/ansible &&
-		ansible-playbook -i hosts/dev deploy_web.yml --tags=deploy --extra-vars="artifact_name=web_2.0.0-beta_$1" &&
-		ansible-playbook -i hosts/uat deploy_web.yml --tags=deploy --extra-vars="artifact_name=web_2.0.0-beta_$1"
+		ansible-playbook -i hosts/dev deploy_web.yml --tags=deploy --extra-vars="artifact_name=web_2.0.0_$1" &&
+		ansible-playbook -i hosts/uat deploy_web.yml --tags=deploy --extra-vars="artifact_name=web_2.0.0_$1"
 }
 
 function deploy_web_with_qa {
 	cd ~/Code/config/ansible &&
-		ansible-playbook -i hosts/dev deploy_web.yml --tags=deploy --extra-vars="artifact_name=web_2.0.0-beta_$1" &&
-		ansible-playbook -i hosts/uat deploy_web.yml --tags=deploy --extra-vars="artifact_name=web_2.0.0-beta_$1" &&
-		ansible-playbook -i hosts/qa deploy_web.yml --tags=deploy --extra-vars="artifact_name=web_2.0.0-beta_$1"
+		ansible-playbook -i hosts/dev deploy_web.yml --tags=deploy --extra-vars="artifact_name=web_2.0.0_$1" &&
+		ansible-playbook -i hosts/uat deploy_web.yml --tags=deploy --extra-vars="artifact_name=web_2.0.0_$1" &&
+		ansible-playbook -i hosts/qa deploy_web.yml --tags=deploy --extra-vars="artifact_name=web_2.0.0_$1"
 }
 
 function deploy_web_qa {
 	cd ~/Code/config/ansible &&
-		ansible-playbook -i hosts/qa deploy_web.yml --tags=deploy --extra-vars="artifact_name=web_2.0.0-beta_$1"
+		ansible-playbook -i hosts/qa deploy_web.yml --tags=deploy --extra-vars="artifact_name=web_2.0.0_$1"
 }
 
 function deploy_web_prod {
 	cd ~/Code/config/ansible &&
-		ansible-playbook -i hosts/prod deploy_web.yml --tags=deploy --extra-vars="artifact_name=web_2.0.0-beta_$1"
+		ansible-playbook -i hosts/prod deploy_web.yml --tags=deploy --extra-vars="artifact_name=web_2.0.0_$1"
 }
 
 function last_web_build {
