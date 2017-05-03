@@ -1,12 +1,6 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 
-# Paths for TodayTix
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home
-export set MYSQL_HOME=/Applications/mampstack-5.4.41-0/mysql
-export PATH=$PATH:/opt/local/bin
-export set PATH=$PATH:$MYSQL_HOME/bin
-
 export GOPATH=~/Code/Go
 export PATH="$PATH:$GOPATH/bin"
 
@@ -65,10 +59,3 @@ git config --global user.email "$GIT_AUTHOR_EMAIL"
 
 
 git config --global push.default simple
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/Matthew/.sdkman"
-[[ -s "/Users/Matthew/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/Matthew/.sdkman/bin/sdkman-init.sh"
-
-# Fix private key forwarding for git.
-ssh-add ~/.ssh/id_rsa > /dev/null 2>&1
