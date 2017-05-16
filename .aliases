@@ -17,7 +17,6 @@ alias dt="cd ~/Desktop"
 alias g="git"
 alias h="history"
 
-alias c="clear"
 alias cgit="clear; git"
 alias carc="clear; arc"
 
